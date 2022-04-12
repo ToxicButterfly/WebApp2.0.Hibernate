@@ -12,18 +12,14 @@ public class JdbcConnection {
     private static Connection connection = null;
 
     public static Connection getConnection() throws ClassNotFoundException {
-        Class c = null, d = null;
         try {
-            //           Class.forName("org.postgresql.Driver");
-            //           Class.forName("com.mysql.cj.jdbc.Driver");
-            c = Class.forName("org.postgresql.Driver");
-            d = Class.forName("app.entities.User");
+            Class.forName("org.postgresql.Driver");
 
         } catch (ClassNotFoundException e) {
             System.out.println("PostgreSQL JDBC Driver is not found. Include it in your library path ");
             e.printStackTrace();
         }
-        System.out.println(c);
+        System.out.println("PostgreSQL JDBC Driver is found");
         String url = "jdbc:postgresql://localhost:5432/Test_db";
         String user = "postgres";
 

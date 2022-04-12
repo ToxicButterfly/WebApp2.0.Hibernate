@@ -31,7 +31,7 @@ public class AddServlet extends HttpServlet {
         User user = new User(name,password);
         Model model = Model.getInstance();
         model.add(user);
-//        dao.save(user);
+        dao.save(user);
         System.out.println("ВЫВОД МОДЕЛИ: " + model.list());
 
         req.setAttribute("userName", name);
