@@ -8,6 +8,7 @@
     <artifactId>WebApp2.0</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -35,5 +36,21 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>maven-tomcat-war-deployment-server</server>
+                    <path>/educationProject</path>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

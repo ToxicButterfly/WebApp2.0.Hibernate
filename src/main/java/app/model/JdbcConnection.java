@@ -1,7 +1,7 @@
 package app.model;
-import org.postgresql.Driver;
-package org.postgresql;
+
 import java.sql.*;
+
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
