@@ -3,6 +3,8 @@ package app.model;
 import app.entities.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -48,5 +50,17 @@ public class DaoUser{
                 LOGGER.log(Level.SEVERE, null, ex);
             }
     }
- //   public void get(User user);
+    public List<User> getAll() throws SQLException {
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT user_name, user_password FROM users";
+        Statement statement = this.connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+        while(resultSet.next()){
+            String name = resultSet.getString("user_name");
+            String pass = resultSet.getString("user_password");
+            User user = new User(name, pass);
+            list.add(user);
+        }
+        return list;
+    };
 }
