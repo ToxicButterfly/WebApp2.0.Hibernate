@@ -11,19 +11,6 @@
 <body>
 <ul>
     <%
-//        DaoUser dao = null;
-//        try {
-//            dao = new DaoUser();
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        ListIterator<User> iter = dao.getAll().listIterator();
-//        while(iter.hasNext()) {
-//            out.println("<ui>");
-//            String name = iter.next().getName();
-//            out.println("<li>" + name + "</li>");
-//            out.println("</ui>");
-//        }
         UserDao dao = new UserDao();
         List<User> list = dao.findAll();
         ListIterator<User> iter = dao.findAll().listIterator();
