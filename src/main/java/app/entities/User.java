@@ -1,14 +1,31 @@
 package app.entities;
 
+
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
+    private int id;
+    @Column(name = "user_name")
     private String name;
+    @Column(name = "user_password")
     private String password;
 
-    public User(String name, String password) {
-        this.name = name;
-        this.password=password;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User() {
+
     }
 
     public String getName() {

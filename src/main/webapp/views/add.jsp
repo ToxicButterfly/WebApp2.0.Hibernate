@@ -1,4 +1,5 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
+<%@ page import="app.model.UserDao" %>
+<%@ page import="app.entities.User" %><%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <html>
 <head>
     <title>Add new user</title>
@@ -28,9 +29,8 @@
         </form>
     </div>
 </div>
-
 <div>
-    <button onclick="location.href='/MyWebApp/'">Back to main</button>
+    <button onclick="location.href='/MyWebApp'">Back to main</button>
 </div>
 </body>
 </html>
